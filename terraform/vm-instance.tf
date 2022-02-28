@@ -1,7 +1,7 @@
 resource "google_compute_instance" "default" {
   name         = "sql-class-database"
   machine_type = "f1-micro"
-  zone         = "us-central1-a"
+  zone         = "us-west1-a"
 
   boot_disk {
     initialize_params {
@@ -22,7 +22,7 @@ resource "google_compute_instance" "default" {
     sudo apt-get install -y git-all
     mkdir /home/class && cd /home/class
     git clone https://github.com/natanascimento/sql-class && cd sql-class/ 
-    sudo chmod +x scripts/docker.sh && sudo sh ../scripts/docker.sh 
+    sudo chmod +x scripts/docker.sh && sudo sh scripts/docker.sh 
     sudo docker-compose up -d
     EOF
 
