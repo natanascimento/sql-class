@@ -21,7 +21,7 @@ resource "google_compute_instance" "default" {
     sudo apt-get update 
     sudo apt-get install -y git-all
     mkdir /home/class && cd /home/class
-    git clone https://github.com/natanascimento/sql-class && cd sql-class/ 
+    git clone https://github.com/natanascimento/sql-class && cd /home/class/sql-class/ 
     sudo chmod +x scripts/docker.sh && sudo sh scripts/docker.sh 
     sudo docker-compose up -d
     EOF
