@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "google" {
-credentials = "${file("credentials.json")}"
-project = "ac-shared-playground"
-region = "us-central1"
+credentials = "${file("../credentials.json")}"
+project = "senai-sql-class"
+region = "us-west1"
 }
