@@ -19,3 +19,9 @@ services:
             - postgres
         ports:
             - "18080:80"
+    dbeaver:
+      image: "dbeaver/cloudbeaver:latest"
+      hostname: dbeaver
+      restart: "unless-stopped"
+      ports:
+        - 8978:8978

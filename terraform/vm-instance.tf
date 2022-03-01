@@ -1,6 +1,6 @@
 resource "google_compute_instance" "default" {
   name         = "sql-class-database"
-  machine_type = "f1-micro"
+  machine_type = "e2-standard-4"
   zone         = "us-west1-a"
 
   boot_disk {
@@ -18,12 +18,12 @@ resource "google_compute_instance" "default" {
   }
 
     metadata_startup_script = <<EOF
-    sudo apt-get update 
-    sudo apt-get install -y git-all
-    mkdir /home/class && cd /home/class
-    git clone https://github.com/natanascimento/sql-class && cd /home/class/sql-class/ 
-    sudo chmod +x scripts/docker.sh && sudo sh scripts/docker.sh 
-    sudo docker-compose up -d
+      sudo apt-get update 
+      sudo apt-get install -y git-all
+      mkdir /home/class && cd /home/class
+      git clone https://github.com/natanascimento/sql-class && cd /home/class/sql-class/ 
+      sudo chmod +x scripts/docker.sh && sudo sh scripts/docker.sh 
+      sudo docker-compose up -d
     EOF
 
     tags = ["database"]
