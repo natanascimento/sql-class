@@ -1,1 +1,3 @@
-# sql-class
+# SQL-CLASS
+
+EU ESTIVE AQUI CONECTANUVEM
