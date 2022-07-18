@@ -18,12 +18,12 @@ resource "google_compute_instance" "default" {
   }
 
     metadata_startup_script = <<EOF
-      sudo apt-get update 
-      sudo apt-get install -y git-all
-      mkdir /home/class && cd /home/class
-      git clone https://github.com/natanascimento/sql-class && cd /home/class/sql-class/ 
-      sudo chmod +x scripts/docker.sh && sudo sh scripts/docker.sh 
-      sudo docker-compose up -d
+    sudo apt-get update 
+    sudo apt-get install -y git-all
+    mkdir /home/class && cd /home/class
+    git clone https://github.com/natanascimento/sql-class && cd /home/class/sql-class/ 
+    sudo chmod +x scripts/docker.sh && sudo sh scripts/docker.sh 
+    sudo docker-compose up -d
     EOF
 
     tags = ["database"]
@@ -35,7 +35,7 @@ resource "google_compute_firewall" "database" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "5432", "18080"]
+    ports    = ["80", "5432", "8978", "18080"]
   }
 
   source_ranges = ["0.0.0.0/0"]

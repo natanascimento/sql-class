@@ -10,6 +10,6 @@ terraform {
 
 provider "google" {
 credentials = "${file("../credentials.json")}"
-project = "senai-sql-class"
+project = "mindful-braid-356703"
 region = "us-west1"
 }
