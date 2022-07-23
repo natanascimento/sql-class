@@ -1,3 +1,3 @@
-# SQL-CLASS
+# SQL Class
 
-EU ESTIVE AQUI CONECTANUVEM
+Conteúdos visto nas aulas de SQL no curso DEVInHouse.
