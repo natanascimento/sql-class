@@ -2,54 +2,63 @@ import pyautogui as pg
 from mail import EmailSender
 import time
 
-emails = ['natanascimento@natanascimento.com']
 
-for email in emails:
-    user = email.split("@")[0]
-    nome = user.split(".")[0].capitalize()
-    password = "senai2022"
+if __name__ == "__main__":
 
-    time.sleep(2)
-    #Click Add
-    pg.click(238, -851)
-    time.sleep(2)
-    #Click User Name
-    pg.click(281, -518)
-    time.sleep(2)
-    pg.write(user)
-    #Click pass
-    pg.click(263, -419)
-    time.sleep(2)
-    pg.write(password)
-    #Click repeat pass
-    pg.click(263, -319)
-    time.sleep(2)
-    pg.write(password)
-    #Click user role
-    time.sleep(2)
-    pg.click(658, -419)
-    #Click create
-    time.sleep(2)
-    pg.click(1740, -690)
-    time.sleep(5)
+    emails = ['natan@natanascimento.com']
 
-    message = f"""
-        Olá {nome}, 
+    for email in emails:
+        user = email.split("@")[0]
+        nome = user.split("_")[0].capitalize()
+        password = ""
+        server_ip = ""
+        server_port = 8978
 
-        Aqui está o seu acesso ao ambiente SQL na Cloud.
+        time.sleep(2)
+        #Click Add
+        time.sleep(1)
+        pg.click(310, 218)
+        time.sleep(2)
+        #Click User Name
+        time.sleep(1)
+        pg.click(340, 562)
+        time.sleep(2)
+        pg.write(user)
+        #Click pass
+        time.sleep(1)
+        pg.click(340, 653)
+        time.sleep(2)
+        pg.write(password)
+        #Click repeat pass
+        time.sleep(1)
+        pg.click(340, 760)
+        time.sleep(2)
+        pg.write(password)
+        #Click user role
+        time.sleep(2)
+        pg.click(736, 653)
+        #Click create
+        time.sleep(2)
+        pg.click(1810, 381)
+        time.sleep(5)
 
-        Para acessar o ambiente, utilize a url http://0.0.0.0:8978/.
+        message = f"""
+            Olá {nome}, 
 
-        Após acessar o DBeaver, insira o login e senha informado abaixo:
+            Aqui está o seu acesso ao ambiente SQL na Cloud.
 
-        Login: {user}
-        Senha: {password}
+            Para acessar o ambiente, utilize a url http://{server_ip}:{server_port}/.
 
-        Divirta-se :)
+            Após acessar o DBeaver, insira o login e senha informado abaixo:
 
-        Muito Obrigado! Até mais! 
-    """
+            Login: {user}
+            Senha: {password}
 
-    EmailSender().send(email, message)
+            Divirta-se :)
 
-    print(f"{nome} foi cadastrado no dbeaver!")
+            Muito Obrigado! Até mais!
+        """
+
+        EmailSender().send(email, message)
+
+        print(f"{nome} foi cadastrado no dbeaver!")

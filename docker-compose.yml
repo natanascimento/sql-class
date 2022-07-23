@@ -3,9 +3,9 @@ services:
     postgres:
         image: postgres
         environment:
-            - POSTGRES_USER=university
-            - POSTGRES_PASSWORD=university
-            - POSTGRES_DB=university
+            - POSTGRES_USER=''
+            - POSTGRES_PASSWORD=''
+            - POSTGRES_DB=''
         ports:
             - "5432:5432"
     pgadmin:
@@ -13,8 +13,8 @@ services:
         container_name: pgadmin4
         hostname: pgadmin4
         environment:
-            - PGADMIN_DEFAULT_EMAIL=admin@university.com
-            - PGADMIN_DEFAULT_PASSWORD=123456
+            - PGADMIN_DEFAULT_EMAIL=natan@natanascimento.com
+            - PGADMIN_DEFAULT_PASSWORD=''
         depends_on:
             - postgres
         ports:

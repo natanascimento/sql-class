@@ -1,4 +1,3 @@
-import os 
 import smtplib
 from email.message import EmailMessage
 
@@ -13,7 +12,7 @@ class EmailSender:
     def __create_message(to: str, content_message: str) -> EmailMessage:
         # Criar um e-mail
         message = EmailMessage()
-        message["Subject"] = "[ConectaNuvem] Acesso ao ambiente SQL Cloud"
+        message["Subject"] = "[SQL Class] Acesso ao ambiente SQL Cloud"
         message["From"] = EmailSender.__EMAIL_ADDRESS
         message["To"] = to
         message.set_content(content_message)
